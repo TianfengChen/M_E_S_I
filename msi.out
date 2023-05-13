@@ -1,0 +1,108 @@
+This program should be regarded as a DEBUGGING aid, not as a 
+certifier of correctness.
+Call with the -l flag or read the license file for terms
+and conditions of use.
+Run this program with "-h" for the list of options.
+
+Bugs, questions, and comments should be directed to
+"murphi@verify.stanford.edu".
+
+Murphi compiler last modified date: Jan 29 1999
+Include files   last modified date: Jan 29 1999
+==========================================================================
+
+==========================================================================
+Murphi Release 3.1
+Finite-state Concurrent System Verifier.
+
+Copyright (C) 1992 - 1999 by the Board of Trustees of
+Leland Stanford Junior University.
+
+==========================================================================
+
+Protocol: spare/msi
+
+Algorithm:
+	Verification by breadth first search.
+	with symmetry algorithm 3 -- Heuristic Small Memory Normalization
+	with permutation trial limit 10.
+
+Memory usage:
+
+	* The size of each state is 2784 bits (rounded up to 348 bytes).
+	* The memory allocated for the hash table and state queue is
+	  16 Mbytes.
+	  With two words of overhead per state, the maximum size of
+	  the state space is 47609 states.
+	   * Use option "-k" or "-m" to increase this, if necessary.
+	* Capacity in queue for breadth-first search: 4760 states.
+	   * Change the constant gPercentActiveStates in mu_prolog.inc
+	     to increase this, if necessary.
+
+Warning: No trace will not be printed in the case of protocol errors!
+         Check the options if you want to have error traces.
+
+Progress Report:
+
+	1000 states explored in 0.10s, with 2516 rules fired and 372 states in the queue.
+	2000 states explored in 0.10s, with 5508 rules fired and 576 states in the queue.
+	3000 states explored in 0.10s, with 8310 rules fired and 871 states in the queue.
+	4000 states explored in 0.10s, with 11207 rules fired and 1134 states in the queue.
+	5000 states explored in 0.12s, with 14259 rules fired and 1374 states in the queue.
+	6000 states explored in 0.14s, with 17356 rules fired and 1528 states in the queue.
+	7000 states explored in 0.16s, with 20674 rules fired and 1595 states in the queue.
+	8000 states explored in 0.20s, with 24149 rules fired and 1633 states in the queue.
+	9000 states explored in 0.22s, with 27571 rules fired and 1654 states in the queue.
+	10000 states explored in 0.24s, with 30883 rules fired and 1687 states in the queue.
+	11000 states explored in 0.26s, with 34058 rules fired and 1797 states in the queue.
+	12000 states explored in 0.30s, with 37092 rules fired and 1919 states in the queue.
+	13000 states explored in 0.32s, with 40382 rules fired and 2016 states in the queue.
+	14000 states explored in 0.34s, with 43487 rules fired and 2121 states in the queue.
+	15000 states explored in 0.38s, with 46739 rules fired and 2250 states in the queue.
+	16000 states explored in 0.40s, with 49975 rules fired and 2330 states in the queue.
+	17000 states explored in 0.42s, with 53118 rules fired and 2409 states in the queue.
+	18000 states explored in 0.44s, with 56700 rules fired and 2424 states in the queue.
+	19000 states explored in 0.48s, with 59889 rules fired and 2452 states in the queue.
+	20000 states explored in 0.50s, with 63623 rules fired and 2395 states in the queue.
+	21000 states explored in 0.54s, with 66759 rules fired and 2496 states in the queue.
+	22000 states explored in 0.56s, with 70713 rules fired and 2270 states in the queue.
+	23000 states explored in 0.58s, with 74036 rules fired and 2346 states in the queue.
+	24000 states explored in 0.62s, with 77670 rules fired and 2189 states in the queue.
+	25000 states explored in 0.64s, with 81207 rules fired and 2193 states in the queue.
+	26000 states explored in 0.68s, with 84623 rules fired and 2132 states in the queue.
+	27000 states explored in 0.70s, with 88277 rules fired and 2100 states in the queue.
+	28000 states explored in 0.74s, with 91735 rules fired and 2050 states in the queue.
+	29000 states explored in 0.76s, with 95555 rules fired and 1970 states in the queue.
+	30000 states explored in 0.80s, with 99185 rules fired and 1862 states in the queue.
+	31000 states explored in 0.82s, with 103161 rules fired and 1758 states in the queue.
+	32000 states explored in 0.86s, with 107146 rules fired and 1556 states in the queue.
+	33000 states explored in 0.88s, with 110984 rules fired and 1422 states in the queue.
+	34000 states explored in 0.92s, with 114807 rules fired and 1318 states in the queue.
+	35000 states explored in 0.96s, with 118809 rules fired and 1143 states in the queue.
+	36000 states explored in 0.98s, with 122739 rules fired and 1012 states in the queue.
+	37000 states explored in 1.02s, with 126804 rules fired and 850 states in the queue.
+	38000 states explored in 1.06s, with 130967 rules fired and 641 states in the queue.
+	39000 states explored in 1.08s, with 134841 rules fired and 510 states in the queue.
+	40000 states explored in 1.12s, with 138839 rules fired and 362 states in the queue.
+	41000 states explored in 1.16s, with 143129 rules fired and 103 states in the queue.
+
+==========================================================================
+
+Status:
+
+	No error found.
+
+State Space Explored:
+
+	41217 states, 144160 rules fired in 1.16s.
+
+Analysis of State Space:
+
+	There are rules that are never fired.
+	If you are running with symmetry, this may be why.  Otherwise,
+	please run this program with "-pr" for the rules information.
+	The maximum size for the multiset "HomeNode.sharers" is: 3.
+	The maximum size for the multiset "Net[HomeType]" is: 4.
+	The maximum size for the multiset "Net[Proc_1]" is: 4.
+	The maximum size for the multiset "Net[Proc_2]" is: 2.
+	The maximum size for the multiset "Net[Proc_3]" is: 2.

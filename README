@@ -1,0 +1,2 @@
+msi.m      : ./msi -m16
+msi_opt.m  : ./msi_opt -m256
